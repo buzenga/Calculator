@@ -121,15 +121,29 @@ buttons.forEach(button => button.addEventListener('click', (e) => {
          // clearDisplay();
          display.innerText += e.target.innerText;
          break;
-      // case "=":
-      //    // secondOperand = Number(display.innerText); 
-      //    // calculate();
-      //    let stringToCountArray = display.innerText.split("+");
-      //    firstOperand = stringToCountArray[0];
-      //    secondOperand = stringToCountArray[1];
-      //    display.innerText = calculate(firstOperand,secondOperand,sign);
-      //    break;
+
       case "=":
+         // if (!display.innerText.includes("+")) {
+         //    if (display.innerText.includes(".") ) {
+         //       return;
+         //    }
+         // }
+         // if (!display.innerText.includes("-")) {
+         //    if (display.innerText.includes(".") ) {
+         //       return;
+         //    }
+         // }
+         // if (!display.innerText.includes("*")) {
+         //    if (display.innerText.includes(".") ) {
+         //       return;
+         //    }
+         // }
+         // if (!display.innerText.includes("/")) {
+         //    if (display.innerText.includes(".") ) {
+         //       return;
+         //    }
+         // }
+
          dotCounter = 0;
 
          if (display.innerText.includes("+")) {
@@ -162,6 +176,31 @@ buttons.forEach(button => button.addEventListener('click', (e) => {
          /////////////////////////////////////////////////
          break;
       case ".":
+
+         if (!display.innerText.includes("+") &&
+         !display.innerText.includes("-") &&
+         !display.innerText.includes("*") &&
+         !display.innerText.includes("/")) {
+            if (display.innerText.includes(".") ) {
+               return;
+            }
+         }
+         // if (!display.innerText.includes("-")) {
+         //    if (display.innerText.includes(".") ) {
+         //       return;
+         //    }
+         // }
+         // if (!display.innerText.includes("*")) {
+         //    if (display.innerText.includes(".") ) {
+         //       return;
+         //    }
+         // }
+         // if (!display.innerText.includes("/")) {
+         //    if (display.innerText.includes(".") ) {
+         //       return;
+         //    }
+         // }
+
       // if (display.innerText.includes(".")) return;
       if (dotCounter > 0) return;
       dotCounter++;
